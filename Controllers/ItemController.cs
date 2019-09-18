@@ -79,7 +79,7 @@ namespace storeinventory.Controllers
 
     [HttpPut("{id}")]
 
-    public ActionResult<Item> UpdateEntry([FromBody]Item entry)
+    public ActionResult<Item> UpdateEntry(int id, [FromBody]Item entry)
     {
       var db = new DatabaseContext();
       var itemToUpdate = db.Items.FirstOrDefault(item => item.Id == id);
